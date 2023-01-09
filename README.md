@@ -62,4 +62,4 @@ El cambio de divisas es:
 
 ###Actualizaciones:
 
-<b></b>
+<b>9/01/2023.- Se ha empezado el proyecto y se ha finalizado el reto nº 1</b>

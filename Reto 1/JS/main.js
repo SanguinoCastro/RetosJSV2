@@ -1,35 +1,51 @@
-// Establecemos la constante contraseña.
-var pass = 'Hol@334';
-//Añadimos la variable intento que será la que irá marcando al programa cuantos intentos lleva el usuario.
-var intento = 0;
-//Cómo extra añadimos una variable que recoja el div "resultado" de dentro del html para poder mostrar el resultado del ejercicio también en la web.
-let divweb = document.getElementById('resultado');
-//Creamos la variable que almacenará la contraseña que escribirá el usuario en esta Prompt.
-//var input = prompt('Introduce la contraseña');
-//Tras el intento del usuario de acertar la contraseña insertamos la orden que le sumará 1 a la variable "intento".
-intento++;
-//Como queremos que el usuario sólo tenga 3 intentos creamos la variable "oportunidades" que llevará la cuenta de los intentos restantes. 
-var oportunidades = 3 - intento;
-//Creamos un bucle que mientras el usuario haya echo menos de 3 intentos y además la contraseña puesta por el usuario no coincida con la variable "pass" mandara una alerta de que la contraseña es incorrecta mostrando los intentos restantes, te volverá a pedir la contraseña y aumentara el contador de "intento" en uno.
-while (intento < 3 && pass != input){
-    alert('¡Contraseña incorrecta! intentos restantes: ' + oportunidades)
-    oportunidades= oportunidades - intento;
-    //var input = prompt('Intentelo de nuevo');
-    intento++;    
+
+//Creamos las funciones que haran los procesos deseados
+
+function circulo (radio){
+    let circArea = (radio * 2)*Math.PI;
+    return circArea;
 }
 
-//Creamos una condición if para saber si el bucle while se ha finalizado por exceder los intentos o porque el usuario ha acertado la contraseña, para ello comparamos que el usuario haya echo 3 o menos intentos y que la contraseña se ha acertado, si se cumple querrá decir que el usuario ha acertado la contraseña, y se mostrará por consola y por pantalla
-if (intento <= 3 && input == pass){
-    console.log ('¡Enhorabuena! ¡Contraseña correcta!');
-    divweb.innerHTML = '¡Enhorabuena! ¡Contraseña correcta!';
-}// En el caso de que no se cumpla quiere decir que el bucle while finalizó porque el usuario se equivocó 3 veces al poner la contraseña y se mostrará en pantalla y consola que se le han acabado los intentos
-else{
-    console.log ('Ha excedido los intentos, acceso denegado.');
-    divweb.innerHTML = 'Ha excedido los intentos, acceso denegado.';
-    
-};
-    
+function triangulo (base, altura){
+    let triArea = (base*altura)/2;
+    return triArea;
+}
 
+function cuadrado (lado){
+    let cuArea = lado * lado;
+    return cuArea;
+}
+let divweb = document.getElementById('resultado');
+var figure = prompt("¿De cuál de las siguientes figuras deseas saber el area? 1) Círculo 2) Triángulo 3) Cuadrado")
 
-
-//Mandamos el cálculo mátematico al div de la web.
+switch (figure){
+    case "1":
+    case "Círculo":
+    case "Circulo":
+    case "círculo":
+    case "círculo":
+        var radio = Number(prompt("¿Cual és el radio del Círculo?"));
+        console.log ("El area del círculo és: " + circulo(radio));
+        divweb.innerHTML = "El area del círculo és: " + circulo(radio);
+    break;
+    case "2":
+    case "Triángulo":
+    case "Triangulo":
+    case "triángulo":
+    case "triangulo":
+        var base = Number(prompt("¿Cual és la base del Triángulo?"));
+        var altura = Number(prompt("¿Cual és la altura del Triángulo?"));
+        console.log ("El area del triángulo és: " + triangulo(base,altura));
+        divweb.innerHTML = "El area del triángulo és: " + triangulo(base,altura);
+    break;
+    case "3":
+    case "Cuadrado":
+    case "cuadrado":
+        var lado = Number(prompt("¿Cual és lado del Cuadrado?"));
+        console.log ("El area del cuadrado és: " + cuadrado(lado));
+        divweb.innerHTML = "El area del cuadrado és: " + cuadrado(lado);
+    break;
+    default:
+        alert("¡Valor añadido erróneo!")
+    break
+}
