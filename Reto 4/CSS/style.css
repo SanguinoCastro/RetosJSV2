@@ -27,12 +27,6 @@ body{
     margin-top: 5em;
 }
 
-#anotacion2{
-    font-style: italic;
-    font-size: small;
-    color: darkgray;
-}
-
 #resultado{
     padding: 1em;
     background-color: azure;

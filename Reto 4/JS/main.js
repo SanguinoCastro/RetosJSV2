@@ -1,35 +1,20 @@
-// Establecemos la constante contraseña.
-var pass = 'Hol@334';
-//Añadimos la variable intento que será la que irá marcando al programa cuantos intentos lleva el usuario.
-var intento = 0;
-//Cómo extra añadimos una variable que recoja el div "resultado" de dentro del html para poder mostrar el resultado del ejercicio también en la web.
-let divweb = document.getElementById('resultado');
-//Creamos la variable que almacenará la contraseña que escribirá el usuario en esta Prompt.
-//var input = prompt('Introduce la contraseña');
-//Tras el intento del usuario de acertar la contraseña insertamos la orden que le sumará 1 a la variable "intento".
-intento++;
-//Como queremos que el usuario sólo tenga 3 intentos creamos la variable "oportunidades" que llevará la cuenta de los intentos restantes. 
-var oportunidades = 3 - intento;
-//Creamos un bucle que mientras el usuario haya echo menos de 3 intentos y además la contraseña puesta por el usuario no coincida con la variable "pass" mandara una alerta de que la contraseña es incorrecta mostrando los intentos restantes, te volverá a pedir la contraseña y aumentara el contador de "intento" en uno.
-while (intento < 3 && pass != input){
-    alert('¡Contraseña incorrecta! intentos restantes: ' + oportunidades)
-    oportunidades= oportunidades - intento;
-    //var input = prompt('Intentelo de nuevo');
-    intento++;    
+//Creamos la función que nos calculará los factoriales que deseemos.
+function fact(number) {
+    for (i = 1; i <= number; i++){
+        factorial = factorial * i;
+    }
+    return factorial;
+    //Esta función multiplica el valor i con el variable "factorial" continuamente hasta que ésta valga tanto cómo el número indicado por el usuario, de esta forma nos aseguramos de que se múltipliquen todos los números anteriores al número indicado obteniendo así el factorial.
 }
+//Pedimos al usuario el número del cuál se desea encontrar el factorial y lo almacenamos en variable.
+var num = Number(prompt("¿De que número quieres saber su factorial?"));
+//Establecemos el variable "factorial" a 1 ya que és el variable que se irá múltiplicando con el "i" del bucle for, y si fuese 0 el resultado siempre seria 0.
+var factorial = 1;
+//Añadimos también el variable de conexión con el html.
+let divweb = document.getElementById('resultado');
+//Mandamos orden de impresión en consola del resultado del proceso de la función con el valor dado por el usuario.
+console.log(fact(num))
+//Y mandamos orden de impresión en el div del html del valor final del variable factorial, ya que copiasemos la petición console.log repetiría el proceso y el resultado saldria erroneo.
+divweb.innerHTML ='El factorial de ' +num +' es: ' +factorial;
 
-//Creamos una condición if para saber si el bucle while se ha finalizado por exceder los intentos o porque el usuario ha acertado la contraseña, para ello comparamos que el usuario haya echo 3 o menos intentos y que la contraseña se ha acertado, si se cumple querrá decir que el usuario ha acertado la contraseña, y se mostrará por consola y por pantalla
-if (intento <= 3 && input == pass){
-    console.log ('¡Enhorabuena! ¡Contraseña correcta!');
-    divweb.innerHTML = '¡Enhorabuena! ¡Contraseña correcta!';
-}// En el caso de que no se cumpla quiere decir que el bucle while finalizó porque el usuario se equivocó 3 veces al poner la contraseña y se mostrará en pantalla y consola que se le han acabado los intentos
-else{
-    console.log ('Ha excedido los intentos, acceso denegado.');
-    divweb.innerHTML = 'Ha excedido los intentos, acceso denegado.';
-    
-};
-    
-
-
-
-//Mandamos el cálculo mátematico al div de la web.
+//Como nota curiosa/informativa la consola calculara el factorial hasta el número 170.99^ a partir del 171 el resultado lo marca como "Infinity"
