@@ -20,16 +20,16 @@
 3. Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos por parámetro para que nos indique si es o no un número primo, debe devolver true si es primo sino false. Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
 <br>  
 
-4. Crea una aplicación que nos calcule el factorial de un número pedido por prompt, lo realizará mediante un métod al que le pasamos el número como parámetro. Para calcular el factorial, se multiplican los números anteriores hasta llegar a uno. Por ejemplo, si introducimos un 5, realizara esta operación: 5*4*3*2*1=120.
+4. Crea una aplicación que nos calcule el factorial de un número pedido por prompt, lo realizará mediante un métod al que le pasamos el número como parámetro. Para calcular el factorial, se multiplican los números anteriores hasta llegar a uno. Por ejemplo, si introducimos un 5, realizará esta operación: 5*4*3*2*1=120.
 <br>  
 
-5. Crea una aplicación que nos convierta un número en base decimal a binario. Esto lo realizará un método al que le pasaremos el número como parámetro, devolverá un String von rl número convertido a binario. Para convertir un número decimal a binario, debemos dividir entre 2 el número y el resultado de esa división se divide entre 2 de nuevo hasta que no se pueda dividir más, el resto que obtengamos de cada división formará el número binario, de abajo a arriba.
+5. Crea una aplicación que nos convierta un número en base decimal a binario. Esto lo realizará un método al que le pasaremos el número como parámetro, devolverá un String con el número convertido a binario. Para convertir un número decimal a binario, debemos dividir entre 2 el número y el resultado de esa división se divide entre 2 de nuevo hasta que no se pueda dividir más, el resto que obtengamos de cada división formará el número binario, de abajo a arriba.
 <br>  
 
 6. Crea una aplicación que nos cuente el número de cifras de un número entero positivo (hay que controlarlo) pedido por prompt. Crea un método que realice esta acción, pasando el número por parámetro devolverá el número de cifras.
 <br>  
 
-7. Crea una aplicación que nos convierta una cantidad de euros introducida por prompt a otra moneda, estas pueden ser a dólares, yenes o libras. El método tendrá como parámetros, la cantidad de euros y la moneda a pasar que será una cadena, este no devolverá ningún valor, mostrará un mensaje indicando el cambio.
+7. Crea una aplicación que nos convierta una cantidad de euros introducida por prompt a otra moneda, estas pueden ser a dólares, yenes o libras. El método tendrá como parámetros, la cantidad de euros y la moneda a pasar que será una string, este no devolverá ningún valor, mostrará un mensaje indicando el cambio.
   
 
 El cambio de divisas es:
@@ -62,5 +62,5 @@ El cambio de divisas es:
 
 ###Actualizaciones:
 
-<b>9/01/2023.- Se ha empezado el proyecto y se ha finalizado el reto nº 1</b>
-<b>10/01/2023.- Se ha modificado el reto nº 1, se han finalizado los retos nº 2, nº 3, nº 4</b>
+<b>9/01/2023.- Se ha empezado el proyecto y se ha finalizado el reto nº 1.</b>
+<b>10/01/2023.- Se ha modificado el reto nº 1, se han finalizado los retos nº 2, nº 3, nº 4 y nº 5.</b>
