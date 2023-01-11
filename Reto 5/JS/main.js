@@ -1,8 +1,8 @@
 //Creamos la Función que convertirá el número a binario.
 function convertirBinario(numero){
     //Creamos dentro de la función 2 variables, binario que contendrá el array dónde se irán añadiendo los restos y finalizará teniendo el valor en binario y resto donde iremos haciendo las divisiones entre 2 y guardando el valor del resto que seguidamente subiremos al array.
-    var binario = [];
-    var resto = 0;
+    let binario = [];
+    let resto = 0;
     do{
         //En estás ordenes pedimos que el valor de resto sea el resto del número que indica el usuario mediantre prompt dividido entre dos.
         resto = numero % 2;
@@ -15,16 +15,14 @@ function convertirBinario(numero){
         //una vez finalizado el bucle subiremos el último numero conseguido al array
         binario.push(numero);
         //invertiremos el orden de los números dentro del array
-        binario = binario.reverse();
-        //daremos al variable "resultado" el valor del array convirtiéndolo en un string
-        resultado = binario.toString();
+        binario = binario.reverse();       
         //y devolveremos el valor de binario.
         return binario;
 }
 //Crearemos el variable que contendrá el valor del número que pedimos al usuario.
-var num = Number(prompt('Introduce el número a convertir'));
+let num = Number(prompt('Introduce el número a convertir'));
 //creamos el variable "resultado" que llamará la función y almacenará su resultado.
-var resultado = convertirBinario(num);
+let resultado = convertirBinario(num);
 //Creamos el variable de enlace con el div del html.
 let divweb = document.getElementById('resultado');
 

@@ -7,9 +7,9 @@ function fact(number) {
     //Esta función multiplica el valor i con el variable "factorial" continuamente hasta que ésta valga tanto cómo el número indicado por el usuario, de esta forma nos aseguramos de que se múltipliquen todos los números anteriores al número indicado obteniendo así el factorial.
 }
 //Pedimos al usuario el número del cuál se desea encontrar el factorial y lo almacenamos en variable.
-var num = Number(prompt("¿De que número quieres saber su factorial?"));
+let num = Number(prompt("¿De que número quieres saber su factorial?"));
 //Establecemos el variable "factorial" a 1 ya que és el variable que se irá múltiplicando con el "i" del bucle for, y si fuese 0 el resultado siempre seria 0.
-var factorial = 1;
+let factorial = 1;
 //Añadimos también el variable de conexión con el html.
 let divweb = document.getElementById('resultado');
 //Mandamos orden de impresión en consola del resultado del proceso de la función con el valor dado por el usuario.

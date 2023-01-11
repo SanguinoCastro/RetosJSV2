@@ -9,11 +9,11 @@ function random (minimo, maximo){
 // Creamos la variable que nos vincula con el div del html.
 let divweb = document.getElementById('resultado');
 // Pedimos al usuario entre que dos números quiere que se creen los aleatorios y cuántos aleatorios quiere que se creen.
-var min = Number(prompt("Introduce desde que número quieres que se cree el aleatorio"));
-var max = Number(prompt("Introduce hasta que número quieres que se cree el aleatorio"));
-var numbers = Number(prompt ("¿Cuántos números aleatorios quieres que se creen?"))
+let min = Number(prompt("Introduce desde que número quieres que se cree el aleatorio"));
+let max = Number(prompt("Introduce hasta que número quieres que se cree el aleatorio"));
+let numbers = Number(prompt ("¿Cuántos números aleatorios quieres que se creen?"))
 //Crearemos una array vacía dónde insertaremos los números aleatorios que se irán creando en el bucle for para luego poder mostrarlos de una manera mas ordenada.
-var aleatorios = []
+let aleatorios = []
 
 //Creamos un bucle for que irá creando tantos números aleatorios como hayamos pedido y los irá añadiendo al array vacío creado antes.
 for (i = 0; i < numbers; i++){

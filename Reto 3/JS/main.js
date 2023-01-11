@@ -9,9 +9,9 @@ function numPrimo(number) {
     return primo;
 }
 // Creamos la variable que pedirá al usuario el número a comprobar.
-var num = Number(prompt('¿Que número deseas comprobar si es primo?'));
+let num = Number(prompt('¿Que número deseas comprobar si es primo?'));
 //Creamos la variable booleana que establece de principio el valor primo a true.
-var primo = true;
+let primo = true;
 //Creamos la variable que se vincula con el documento html.
 let divweb = document.getElementById('resultado');
 
