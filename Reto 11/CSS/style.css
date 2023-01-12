@@ -27,20 +27,6 @@ body{
     margin-top: 5em;
 }
 
-#anotacion2{
-    font-style: italic;
-    font-size: small;
-    color: darkgray;
-}
-
-#resultado{
-    padding: 1em;
-    background-color: azure;
-    border: 0.1em solid red;
-    color: black;
-    font-size: large;
-}
-
 footer{
     align-self: flex-end;
     justify-content: end;

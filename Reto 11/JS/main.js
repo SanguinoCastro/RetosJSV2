@@ -1,35 +1,65 @@
-// Establecemos la constante contraseña.
-var pass = 'Hol@334';
-//Añadimos la variable intento que será la que irá marcando al programa cuantos intentos lleva el usuario.
-var intento = 0;
-//Cómo extra añadimos una variable que recoja el div "resultado" de dentro del html para poder mostrar el resultado del ejercicio también en la web.
-let divweb = document.getElementById('resultado');
-//Creamos la variable que almacenará la contraseña que escribirá el usuario en esta Prompt.
-//var input = prompt('Introduce la contraseña');
-//Tras el intento del usuario de acertar la contraseña insertamos la orden que le sumará 1 a la variable "intento".
-intento++;
-//Como queremos que el usuario sólo tenga 3 intentos creamos la variable "oportunidades" que llevará la cuenta de los intentos restantes. 
-var oportunidades = 3 - intento;
-//Creamos un bucle que mientras el usuario haya echo menos de 3 intentos y además la contraseña puesta por el usuario no coincida con la variable "pass" mandara una alerta de que la contraseña es incorrecta mostrando los intentos restantes, te volverá a pedir la contraseña y aumentara el contador de "intento" en uno.
-while (intento < 3 && pass != input){
-    alert('¡Contraseña incorrecta! intentos restantes: ' + oportunidades)
-    oportunidades= oportunidades - intento;
-    //var input = prompt('Intentelo de nuevo');
-    intento++;    
+//Primero creamos los 2 arrays vacíos que recibirán los valores mediante las function.
+var array1 = [];
+var array2 = [];
+//Creamos las variable a las que necesitamos que accedan varias funciones.
+let max = 0;
+let min = 0;
+
+//Creamos la primera función que tendrá la variable 'num' dónde se irán guardando los números random antes de subirse al array, pedirá al usuario cuántos números quiere que haya en las array y etre que dos valores han de estar los aleatorios creados, luego los creará mediante un bucle for que se repetirá hasta que el contador 'i' sea igual al valor puesto por el usuario en la variable 'lengthArray' y los subirá al array que le indiquemos a la función cuando la llamemos más adelante (en este caso a la array1) 
+function randomize(array){
+    let num = 0;
+    let lengthArray = Number(prompt('¿Cuántos números quieres que tengan las array?'));
+    min = Number(prompt('¿Desde que número deseas que seán los aleatorios?'));
+    max = Number(prompt('¿Y hasta que número?'));
+    for (i = 0; i < lengthArray; i++) {
+        num = Math.ceil(Math.random() * ((max + 1) - min));
+        array.push(num);
+    }   
 }
 
-//Creamos una condición if para saber si el bucle while se ha finalizado por exceder los intentos o porque el usuario ha acertado la contraseña, para ello comparamos que el usuario haya echo 3 o menos intentos y que la contraseña se ha acertado, si se cumple querrá decir que el usuario ha acertado la contraseña, y se mostrará por consola y por pantalla
-if (intento <= 3 && input == pass){
-    console.log ('¡Enhorabuena! ¡Contraseña correcta!');
-    divweb.innerHTML = '¡Enhorabuena! ¡Contraseña correcta!';
-}// En el caso de que no se cumpla quiere decir que el bucle while finalizó porque el usuario se equivocó 3 veces al poner la contraseña y se mostrará en pantalla y consola que se le han acabado los intentos
-else{
-    console.log ('Ha excedido los intentos, acceso denegado.');
-    divweb.innerHTML = 'Ha excedido los intentos, acceso denegado.';
-    
-};
-    
+//Creamos una pequeña función que copie en una variable cada valor del array que indiquemos (en este caso a array1) y devolverá el valor de la variable 'copy'.
+function copia(array) {
+    let copy = array.slice(0);
+    return copy;
+}
 
+//Creamos la función que creará una array nueva y le subirá tantos valores aleatorios como tenga la array que le indiquemos a la función y devolverá la nueva array. 
+function randomize2(array) {
+    let random;
+    let randomArray = [];
+    for (i = 0; i < array.length; i++) {
+        random = Math.round(Math.random() * ((max + 1) - min));
+        randomArray.push(random);
+    }
+    return randomArray;
+}
 
+//Para finalizar crearemos la función que cogerá el valor de dos array que le indiquemos (en este caso las array1 y array2) y multiplicará cada una de las posiciones de la primera array con las posiciones de la segunda. Guardará en una tercera array, en el mismo orden, el resultado de estas.
+function multi(list1, list2) {
+    let arrayMulti = [];
+    let multi = 0;
+    for (i = 0; i < array1.length; i++) {
+        multi = list1[i] * list2[i];
+        arrayMulti.push(multi);
+    }
+    return arrayMulti;
+}
 
-//Mandamos el cálculo mátematico al div de la web.
+//Empezamos llamando la primera función 'randomize' para dar valores a la 'array1'
+randomize(array1);
+//Imprimimos por consola los valores generados aleatoriamente en la 'array1'
+console.log('El primer array tiene los siguientes valores:');
+console.log(array1);
+//Usamos la función 'copia' para darle a 'array2' los mismos valores que tiene array1
+array2 = copia(array1);
+//E indicamos por consola que tras el proceso anterior 'array2' tiene ahora los mismos valores que 'array1'
+console.log('Tras la copia del primer array, array2 tiene los siguientes valores:');
+console.log(array2)
+//Tras eso usamos 'randomize2' sobre 'array2' para cambiar los valores por otros valores aleatorios y la función usará la 'array1' para que le indique cuántos números tiene que crear. 
+array2 = randomize2(array1);
+//Y mostramos por consola los nuevos valores que ha obtenido el 'array2'
+console.log('Tras randomizar el array 2 queda así:')
+console.log(array2)
+//Por último mostramos en consola el resultado de usar la función 'multi' con el 'array1' y el 'array2' como valores.
+console.log('Los valores del array que tiene los resultados de las multiplicaciones de los valores del array 1 y del array 2 son los siguientes:')
+console.log(multi(array1, array2));
