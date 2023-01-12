@@ -65,4 +65,4 @@ El cambio de divisas es:
 <b>9/01/2023.- Se ha empezado el proyecto y se ha finalizado el reto nº 1.</b>
 <b>10/01/2023.- Se ha modificado el reto nº 1, se han finalizado los retos nº 2, nº 3, nº 4 y nº 5.</b>
 <b>11/01/2023.- Se han modificado retos para sustituir los "var" por "let" y se han finalizado los retos nº 6, nº 7 y nº 8</b>
-<b>12/01/2023.- Se han finalizado los retos nº 9, nº 10, nº 11</b>
+<b>12/01/2023.- Se han finalizado los retos nº 9, nº 10 y nº 11</b>
