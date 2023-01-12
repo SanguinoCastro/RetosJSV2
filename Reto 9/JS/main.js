@@ -1,35 +1,31 @@
-// Establecemos la constante contraseña.
-var pass = 'Hol@334';
-//Añadimos la variable intento que será la que irá marcando al programa cuantos intentos lleva el usuario.
-var intento = 0;
-//Cómo extra añadimos una variable que recoja el div "resultado" de dentro del html para poder mostrar el resultado del ejercicio también en la web.
+//Creamos la array vacía dónde se irán añadiendo los X números aleatorios creados por la función 'input'.
+let array = [];
+// Variable de enlace con el div del html.
 let divweb = document.getElementById('resultado');
-//Creamos la variable que almacenará la contraseña que escribirá el usuario en esta Prompt.
-//var input = prompt('Introduce la contraseña');
-//Tras el intento del usuario de acertar la contraseña insertamos la orden que le sumará 1 a la variable "intento".
-intento++;
-//Como queremos que el usuario sólo tenga 3 intentos creamos la variable "oportunidades" que llevará la cuenta de los intentos restantes. 
-var oportunidades = 3 - intento;
-//Creamos un bucle que mientras el usuario haya echo menos de 3 intentos y además la contraseña puesta por el usuario no coincida con la variable "pass" mandara una alerta de que la contraseña es incorrecta mostrando los intentos restantes, te volverá a pedir la contraseña y aumentara el contador de "intento" en uno.
-while (intento < 3 && pass != input){
-    alert('¡Contraseña incorrecta! intentos restantes: ' + oportunidades)
-    oportunidades= oportunidades - intento;
-    //var input = prompt('Intentelo de nuevo');
-    intento++;    
+
+// Creamos la primera función que pedirá al usuario cuántos números aleatorios quiere meter en la array y luego mediante un bucle for que se repetirá tantas veces como el número indicado por el usuario, se crearán números aleatorios entre 9 y 0 (ya que el  comando Math.random crea randoms incluyendo el valor mínimo pero nunca llegando al valor máximo indicado en este caso el 10)y los añadirá al array, para finalizar devolviendo el valor del array. 
+function input (){
+    let numbers = prompt('¿Cuántos números aleatorios quieres que tenga la array?');
+    for (i=1; i <= numbers ; i++){
+        array.push(parseInt(Math.random()*(10-0)));
+    }
+    return array;
 }
 
-//Creamos una condición if para saber si el bucle while se ha finalizado por exceder los intentos o porque el usuario ha acertado la contraseña, para ello comparamos que el usuario haya echo 3 o menos intentos y que la contraseña se ha acertado, si se cumple querrá decir que el usuario ha acertado la contraseña, y se mostrará por consola y por pantalla
-if (intento <= 3 && input == pass){
-    console.log ('¡Enhorabuena! ¡Contraseña correcta!');
-    divweb.innerHTML = '¡Enhorabuena! ¡Contraseña correcta!';
-}// En el caso de que no se cumpla quiere decir que el bucle while finalizó porque el usuario se equivocó 3 veces al poner la contraseña y se mostrará en pantalla y consola que se le han acabado los intentos
-else{
-    console.log ('Ha excedido los intentos, acceso denegado.');
-    divweb.innerHTML = 'Ha excedido los intentos, acceso denegado.';
+// Luego creamos la segunda función que sumará cada uno de los valores del array y lo añadirá a una variable interna llamada 'suma' y luego mandará primero a imprimir en consola cada uno de los números aleatorios añadidos al array con su índice y seguidamente mandará a imprimir por consola y html el resultado de la suma de todos.
+function suma (){
+   let suma= 0;
+    array.forEach(numero =>{
+        suma= suma + numero;
+   });
+    console.log (array);
+    console.log ('El resultado de la suma de todos los números del array és: ' +suma);
+    divweb.innerHTML = 'El resultado de la suma de todos los números del array és: ' +suma;
+}
+//Por último llamamos a las dos funciones, primero a la función input para que llene la array y finalmente la función suma para que haga el cálculo y muestre los valores del array y el resultado de la suma.
+input();
+suma();
+
+//Nota: El orden en que se creen las funciones no afecta a la funcionalidad final, ya que lo importante es el orden en el que se llamen.
+
     
-};
-    
-
-
-
-//Mandamos el cálculo mátematico al div de la web.
