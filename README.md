@@ -44,7 +44,7 @@ El cambio de divisas es:
 9. Crea un array de números dónde le indicamos por prompt el tamaño del array, rellenaremos el array con números aleatorios entre 0 y 9. Al final muestra por consola el valor de cada posición y la suma de todos los valores. Tareas a realizar: Haz un método para rellenar el array (que tenga como parámetros los números entre los que tenga que generar) y otro para mostrar el contenido y la suma del array. 
 <br>  
 
-10. Crea un array de números de un tamaño pasado por prompt, el array contendrá números aleatorios primos entre los números deseados, por último, nos indicar cual es el mayor de todos. Haz un método para comprobar que el número aleatorio es primo, puedes hacer todos los métodos que necesites.
+10. Crea un array de números de un tamaño pasado por prompt, el array contendrá números aleatorios primos entre los números deseados, por último, nos indicará cuál es el mayor de todos. Haz un método para comprobar que el número aleatorio es primo, puedes hacer todos los métodos que necesites.
 <br>  
 
 11. Crea dos arrays de números con la dimensión pasada por teclado. Uno de ellos estará rellenado con números aleatorios y el otro apuntará al array anterior, reasigna los valores del segundo array con valores aleatorios. Después, crea un método que tenga como parámetros, los dos arrays y devuelva uno nuevo con la multiplicación de la posición 0 del array1 con el del array2 y así sucesivamente. Por último, muestra el contenido de cada array.  
@@ -65,3 +65,4 @@ El cambio de divisas es:
 <b>9/01/2023.- Se ha empezado el proyecto y se ha finalizado el reto nº 1.</b>
 <b>10/01/2023.- Se ha modificado el reto nº 1, se han finalizado los retos nº 2, nº 3, nº 4 y nº 5.</b>
 <b>11/01/2023.- Se han modificado retos para sustituir los "var" por "let" y se han finalizado los retos nº 6, nº 7 y nº 8</b>
+<b>12/01/2023.- Se han finalizado los retos nº 9, nº 10</b>
